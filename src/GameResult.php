@@ -42,14 +42,13 @@ class GameResult
         return $this->winner;
     }
 
-    private function generateGameReport()
+    private function generateGameReport(): string
     {
-        $report = '';
-        foreach ($this->setResults as $setResult){
+        $report = array_map(function($setResult) {
             /** @var SetResult $setResult */
-            $report .= $setResult->getReport();
-        }
+            return $setResult->getReport();
+        }, $this->setResults);
 
-        return $report;
+        return implode('', $report);
     }
 }
