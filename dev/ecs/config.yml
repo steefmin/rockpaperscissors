@@ -1,3 +1,14 @@
 imports:
   - { resource: '../../vendor/symplify/easy-coding-standard/config/set/clean-code.yaml' }
   - { resource: '../../vendor/symplify/easy-coding-standard/config/set/psr12.yaml' }
+
+services:
+  PhpCsFixer\Fixer\Alias\MbStrFunctionsFixer: ~
+  PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer: ~
+  PhpCsFixer\Fixer\FunctionNotation\ReturnTypeDeclarationFixer: ~
+  PhpCsFixer\Fixer\NamespaceNotation\BlankLineAfterNamespaceFixer: ~
+  PhpCsFixer\Fixer\NamespaceNotation\SingleBlankLineBeforeNamespaceFixer: ~
+  PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer: ~
+  PhpCsFixer\Fixer\Strict\StrictComparisonFixer: ~
+  PhpCsFixer\Fixer\Strict\StrictParamFixer: ~
+  SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff: ~

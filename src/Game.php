@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Game;
 
 class Game
@@ -16,15 +18,21 @@ class Game
      */
     private $setResults = [];
 
+    public function __construct(Players $players)
+    {
+        $this->players = $players;
+    }
+
 
     public function run(): string
     {
         return $this->play()->print();
     }
 
-    public function __construct(Players $players)
+    public static function gameOn(): string
     {
-        $this->players = $players;
+        $game = new self(Players::init());
+        return $game->run();
     }
 
     private function play(): GameResult
@@ -83,11 +91,5 @@ class Game
         }
 
         throw new CheatException('No game winner found');
-    }
-
-    public static function gameOn(): string
-    {
-        $game = new self(Players::init());
-        return $game->run();
     }
 }

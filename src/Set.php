@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Game;
 
@@ -9,14 +10,14 @@ class Set
 
     private $roundResults = [];
 
-    public function addRoundResult(RoundResult $roundResult): void
-    {
-        array_push($this->roundResults, $roundResult);
-    }
-
     public function __construct($players)
     {
         $this->players = $players;
+    }
+
+    public function addRoundResult(RoundResult $roundResult): void
+    {
+        array_push($this->roundResults, $roundResult);
     }
 
     public function play(): SetResult
