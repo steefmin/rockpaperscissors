@@ -3,7 +3,6 @@
 
 namespace Game;
 
-
 class Player
 {
     private $name;

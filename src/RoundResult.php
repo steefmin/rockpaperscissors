@@ -3,7 +3,6 @@
 
 namespace Game;
 
-
 class RoundResult
 {
     private $winner;
@@ -19,7 +18,7 @@ class RoundResult
         $this->winner = $winner;
     }
 
-    public function toString():string
+    public function toString(): string
     {
         return sprintf(
             '  Round resulted in %s, %s',

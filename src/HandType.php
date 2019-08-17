@@ -3,7 +3,6 @@
 
 namespace Game;
 
-
 class HandType
 {
     public const ROCK = 'rock';

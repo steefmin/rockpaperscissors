@@ -30,4 +30,10 @@ class Players
             new Player('Player Two')
         );
     }
+
+    public function draw(): void
+    {
+        $this->player1->drawHand();
+        $this->player2->drawHand();
+    }
 }

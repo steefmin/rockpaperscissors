@@ -6,7 +6,7 @@ class SetResult
 {
     private $rounds;
 
-    public function __construct( array $rounds)
+    public function __construct(array $rounds)
     {
         $this->rounds = $rounds;
     }
@@ -14,11 +14,10 @@ class SetResult
     public function getReport(): string
     {
         $report = '';
-        foreach ($this->rounds as $roundResult)
-        {
+        foreach ($this->rounds as $roundResult) {
             /** @var RoundResult $roundResult */
             $report .= $roundResult->toString() . "\r\n";
-            if ($roundResult->hasWinner()){
+            if ($roundResult->hasWinner()) {
                 $report .= '--Set result: ' . $roundResult->getResult();
             }
         }

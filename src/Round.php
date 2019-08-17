@@ -3,7 +3,6 @@
 
 namespace Game;
 
-
 class Round
 {
     private $players;
@@ -15,7 +14,7 @@ class Round
 
     public function play(): RoundResult
     {
-        $this->draw();
+        $this->players->draw();
 
         return $this->decide(
             $this->players->getFirstPlayer(),
@@ -23,16 +22,9 @@ class Round
         );
     }
 
-    private function draw(): void
-    {
-            $this->players->getFirstPlayer()->drawHand();
-            $this->players->getSecondPlayer()->drawHand();
-    }
-
     private function decide(Player $firstPlayer, Player $secondPlayer): RoundResult
     {
-        if($firstPlayer->getHand()->wonFrom($secondPlayer->getHand()))
-        {
+        if ($firstPlayer->getHand()->wonFrom($secondPlayer->getHand())) {
             return new RoundResult(
                 $firstPlayer->getHand(),
                 $secondPlayer->getHand(),
@@ -40,8 +32,7 @@ class Round
             );
         }
 
-        if($secondPlayer->getHand()->wonFrom($firstPlayer->getHand()))
-        {
+        if ($secondPlayer->getHand()->wonFrom($firstPlayer->getHand())) {
             return new RoundResult(
                 $secondPlayer->getHand(),
                 $firstPlayer->getHand(),
@@ -56,4 +47,3 @@ class Round
         );
     }
 }
-

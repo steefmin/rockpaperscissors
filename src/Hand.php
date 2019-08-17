@@ -3,7 +3,6 @@
 
 namespace Game;
 
-
 class Hand
 {
     private $type;
@@ -16,7 +15,7 @@ class Hand
             HandType::SCISSORS
         ];
 
-        $this->type = $types[rand(0,sizeof($types)-1)];
+        $this->type = $types[rand(0, sizeof($types) - 1)];
     }
 
     public function getType(): string
@@ -24,7 +23,8 @@ class Hand
         return $this->type;
     }
 
-    public function wonFrom(Hand $otherHand) {
+    public function wonFrom(Hand $otherHand)
+    {
         if ($this->type === HandType::PAPER && $otherHand->getType() === HandType::ROCK) {
             return true;
         }

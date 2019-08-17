@@ -11,5 +11,9 @@
             "Game\\": "src/"
         }
     },
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "symplify/easy-coding-standard": "^6.0"
+    }
 }

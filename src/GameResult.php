@@ -3,7 +3,6 @@
 
 namespace Game;
 
-
 class GameResult
 {
     private $setResults;
@@ -44,7 +43,7 @@ class GameResult
 
     private function generateGameReport(): string
     {
-        $report = array_map(function($setResult) {
+        $report = array_map(function ($setResult) {
             /** @var SetResult $setResult */
             return $setResult->getReport();
         }, $this->setResults);

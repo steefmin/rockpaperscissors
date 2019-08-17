@@ -3,7 +3,6 @@
 
 namespace Game;
 
-
 class Set
 {
     private $players;
@@ -39,5 +38,4 @@ class Set
     {
         return end($this->roundResults);
     }
-
 }

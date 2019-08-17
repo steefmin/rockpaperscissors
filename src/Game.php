@@ -4,7 +4,7 @@ namespace Game;
 
 class Game
 {
-    const WIN_LIMIT = 2;
+    public const WIN_LIMIT = 2;
 
     /**
      * @var Players
@@ -66,8 +66,7 @@ class Game
 
     private function countSetWins(Player $player): int
     {
-        return sizeof(array_filter($this->setResults, function ($setResult) use ($player)
-        {
+        return sizeof(array_filter($this->setResults, function ($setResult) use ($player) {
             /** @var SetResult $setResult*/
             return $setResult->getWinner()->getName() === $player->getName();
         }));
@@ -75,11 +74,11 @@ class Game
 
     private function getWinner(): Player
     {
-        if ($this->firstPlayerWon()){
+        if ($this->firstPlayerWon()) {
             return $this->players->getFirstPlayer();
         }
 
-        if ($this->secondPlayerWon()){
+        if ($this->secondPlayerWon()) {
             return $this->players->getSecondPlayer();
         }
 
