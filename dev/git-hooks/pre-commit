@@ -1,1 +1,2 @@
 make codestyle
+make tests

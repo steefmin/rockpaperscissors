@@ -8,15 +8,9 @@ class Hand
 {
     private $type;
 
-    public function __construct()
+    public function __construct(string $type)
     {
-        $types = [
-            HandType::ROCK,
-            HandType::PAPER,
-            HandType::SCISSORS
-        ];
-
-        $this->type = $types[rand(0, sizeof($types) - 1)];
+        $this->type = $type;
     }
 
     public function getType(): string

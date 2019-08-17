@@ -6,6 +6,10 @@ composer-install:
 	@echo "\n=== Installing dependencies ===\n"
 	composer install
 
+@PHONEY: tests
+tests:
+	./vendor/bin/phpunit src/Tests
+
 @PHONY: codestyle
 codestyle:
 	@echo "\n=== Checking codestyle ===\n"

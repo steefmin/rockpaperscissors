@@ -27,6 +27,13 @@ class Player
 
     public function drawHand(): void
     {
-        $this->hand = new Hand();
+        $this->hand = new Hand($this->pick());
+    }
+
+    private function pick(): string
+    {
+        $types = HandType::getTypesArray();
+
+        return $types[rand(0, sizeof($types) - 1)];
     }
 }
