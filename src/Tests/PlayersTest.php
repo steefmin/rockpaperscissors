@@ -6,15 +6,14 @@ namespace Game\Tests;
 
 use Game\Objects\Player;
 use Game\Objects\Players;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class PlayersTest extends TestCase
 {
-    /** @var MockObject */
+    /** @var Player */
     private $player1;
 
-    /** @var MockObject */
+    /** @var Player */
     private $player2;
 
     private $players;

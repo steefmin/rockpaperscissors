@@ -6,6 +6,10 @@ do-composer-install:
 	@echo "\n=== Installing dependencies ===\n"
 	composer install
 
+@PHONEY: ci pre-commit-checks
+ci: codestyle tests
+pre-commit-checks: codestyle tests
+
 @PHONEY: tests
 tests:
 	./vendor/bin/phpunit src/Tests
