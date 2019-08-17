@@ -12,8 +12,7 @@ codestyle:
 	vendor/bin/ecs check src --config dev/ecs/config.yml
 
 @PHONY: git-hooks
-git-hooks:
-	.git/hooks/pre-commit
+git-hooks: .git/hooks/pre-commit
 
 @PHONY: run
 run:
