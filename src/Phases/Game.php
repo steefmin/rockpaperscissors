@@ -9,15 +9,11 @@ use Game\Objects\Player;
 use Game\Objects\Players;
 use Game\Results\GameResult;
 use Game\Results\SetResult;
-use Game\Phases\Set;
 
 class Game
 {
     public const WIN_LIMIT = 2;
 
-    /**
-     * @var Players
-     */
     private $players;
 
     /**
@@ -81,10 +77,7 @@ class Game
 
     private function countSetWins(Player $player): int
     {
-        return sizeof(array_filter($this->setResults, function ($setResult) use ($player) {
-            /** @var SetResult $setResult*/
-            return $setResult->getWinner()->getName() === $player->getName();
-        }));
+        return sizeof($this->getSetWins($player));
     }
 
     private function getWinner(): Player
@@ -98,5 +91,13 @@ class Game
         }
 
         throw new CheatException('No game winner found');
+    }
+
+    private function getSetWins(Player $player): array
+    {
+        return array_filter($this->setResults, function ($setResult) use ($player) {
+            /** @var SetResult $setResult */
+            return $setResult->getWinner()->getName() === $player->getName();
+        });
     }
 }
