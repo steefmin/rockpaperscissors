@@ -16,6 +16,7 @@ class SetResult
         $report = '';
         foreach ($this->rounds as $roundResult)
         {
+            /** @var RoundResult $roundResult */
             $report .= $roundResult->toString() . "\r\n";
             if ($roundResult->hasWinner()){
                 $report .= '--Set result: ' . $roundResult->getResult();

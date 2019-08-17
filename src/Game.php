@@ -16,15 +16,7 @@ class Game
      */
     private $setResults = [];
 
-    /**
-     * DEMANDS
-     * Best out of three
-     * 2 CPU's
-     * In terminal; no frameworks; step2 = unittestssdfsdfs
-     * Who wins
-     * all hands played and result of round
-     * do the git
-     */
+
     public function run(): string
     {
         return $this->play()->print();
@@ -37,12 +29,12 @@ class Game
 
     private function play(): GameResult
     {
-        do {
+        while (!$this->haveWinner()) {
             $set = new Set($this->players);
             $setResult = $set->play();
 
             $this->addSetResult($setResult);
-        } while (!$this->haveWinner());
+        }
 
         return new GameResult($this->getWinner(), $this->setResults);
     }
@@ -92,5 +84,11 @@ class Game
         }
 
         throw new CheatException('No game winner found');
+    }
+
+    public static function gameOn(): string
+    {
+        $game = new self(Players::init());
+        return $game->run();
     }
 }

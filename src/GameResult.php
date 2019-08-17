@@ -46,6 +46,7 @@ class GameResult
     {
         $report = '';
         foreach ($this->setResults as $setResult){
+            /** @var SetResult $setResult */
             $report .= $setResult->getReport();
         }
 
