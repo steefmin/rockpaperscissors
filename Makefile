@@ -1,8 +1,8 @@
 @PHONY: install
-install: git-hooks composer-install
+install: git-hooks do-composer-install
 
-@PHONY: composer-install
-composer-install:
+@PHONY: do-composer-install
+do-composer-install:
 	@echo "\n=== Installing dependencies ===\n"
 	composer install
 

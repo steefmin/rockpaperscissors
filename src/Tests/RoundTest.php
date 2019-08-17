@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Game;
+namespace Game\Tests;
 
 use Game\Objects\Players;
 use Game\Phases\Round;
@@ -15,6 +15,9 @@ class RoundTest extends TestCase
     {
         $players = $this->createMock(Players::class);
         $round = new Round($players);
+
+        $players->expects($this->once())->method('draw');
+
         $this->assertInstanceOf(RoundResult::class, $round->play());
     }
 }

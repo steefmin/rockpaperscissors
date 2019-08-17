@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Game;
+namespace Game\Tests;
 
 use Game\Objects\Hand;
 use Game\Objects\HandType;

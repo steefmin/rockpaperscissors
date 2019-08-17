@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Game;
+namespace Game\Tests;
 
 use Game\Objects\Players;
 use Game\Phases\Game;
@@ -15,6 +15,7 @@ class GameTest extends TestCase
     {
         $players = Players::init();
         $game = new Game($players);
+
         $this->assertInstanceOf(GameResult::class, $game->play());
     }
 
