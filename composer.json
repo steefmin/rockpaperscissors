@@ -1,0 +1,15 @@
+{
+    "name": "steef/rps",
+    "authors": [
+        {
+            "name": "Steef Min",
+            "email": "smin@enrise.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Game\\": "src/"
+        }
+    },
+    "require": {}
+}
