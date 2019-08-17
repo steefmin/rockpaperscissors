@@ -13,6 +13,7 @@ class Player
     public function __construct(string $name)
     {
         $this->name = $name;
+        $this->drawHand();
     }
 
     public function getName(): string
