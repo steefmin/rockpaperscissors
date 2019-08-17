@@ -38,7 +38,7 @@ class Game
         return $game->run();
     }
 
-    private function play(): GameResult
+    public function play(): GameResult
     {
         while (!$this->haveWinner()) {
             $set = new Set($this->players);

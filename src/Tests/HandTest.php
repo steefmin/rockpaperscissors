@@ -51,8 +51,7 @@ class HandTest extends TestCase
      */
     public function testWonFrom(string $handType1, string $handType2, bool $wins)
     {
-        $otherHand = $this->createMock(Hand::class);
-        $otherHand->method('getType')->willReturn($handType2);
+        $otherHand = new Hand($handType2);
         $subject = new Hand($handType1);
         $this->assertEquals($wins, $subject->wonFrom($otherHand));
     }
