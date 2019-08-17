@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Game;
+namespace Game\Phases;
+
+use Game\Results\RoundResult;
+use Game\Results\SetResult;
 
 class Set
 {

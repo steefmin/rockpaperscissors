@@ -2,7 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Game;
+namespace Game\Phases;
+
+use Game\Exceptions\CheatException;
+use Game\Objects\Player;
+use Game\Objects\Players;
+use Game\Results\GameResult;
+use Game\Results\SetResult;
+use Game\Phases\Set;
 
 class Game
 {

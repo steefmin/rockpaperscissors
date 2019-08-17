@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Game;
+namespace Game\Results;
+
+use Game\Objects\Player;
 
 class SetResult
 {

@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Game;
+namespace Game\Results;
+
+use Game\Objects\Hand;
+use Game\Objects\Player;
 
 class RoundResult
 {
